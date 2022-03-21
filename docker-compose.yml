@@ -1,0 +1,21 @@
+version: '3'
+services:
+        haus-server:
+                build:
+                        context: .
+                        dockerfile: Dockerfile
+                image: haus-server
+                container_name: haus-server
+                restart: unless-stopped
+                environment:
+                        - PORT=8080
+                        - NODE_ENV=production
+                command: npm start
+                volumes:
+                        - .:/usr/app
+                        - node_modules:/usr/app/node_modules
+                ports:
+                        - 8080:8080
+
+volumes:
+        node_modules:

@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 import apiRouter from './routes/api.js';
 
@@ -15,8 +15,10 @@ app.get('/', (req, res) => {
 
 app.use('/api/v1', apiRouter);
 
+console.log(`Running in ${process.env.NODE_ENV}`);
+
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Haus server listening on port ${port}`);
 })
 
 

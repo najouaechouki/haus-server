@@ -7,6 +7,9 @@
     "nodemon": "^2.0.15",
     "url-exist": "^3.0.0"
   },
+  "scripts": {
+	  "start": "NODE_OPTIONS='--experimental-specifier-resolution=node' node index.js"
+  },
   "name": "haus-server",
   "version": "1.0.0",
   "exports": "./index.js",
